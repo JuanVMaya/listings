@@ -1,0 +1,113 @@
+@use "./colors";
+@use "./typography";
+@use "./mixins";
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Titillium Web", sans-serif;
+  background-color: colors.$backgroundLightColor;
+}
+// Page header h1,
+h1 {
+  @include mixins.mobile-page-header;
+  @include mixins.tablet {
+    @include mixins.tablet-desktop-page-header;
+  }
+}
+//Subheader
+h2 {
+  @include mixins.mobile-subheader;
+  @include mixins.tablet {
+    @include mixins.tablet-desktop-subheader;
+  }
+}
+// Labels, Links & Buttons
+h3 {
+  @include mixins.mobile-labels-links-buttons;
+  @include mixins.tablet {
+    @include mixins.tablet-desktop-labels-links-buttons;
+  }
+}
+// Table Header
+h4 {
+  @include mixins.mobile-table-header;
+  text-transform: uppercase;
+  color: colors.$secondaryDarkColor;
+  @include mixins.tablet {
+    @include mixins.tablet-desktop-table-header;
+  }
+}
+
+//Body Copy
+// p {
+//   @include mixins.mobile-body-large;
+//   @include mixins.tablet {
+//     @include mixins.tablet-desktop-body-large;
+//   }
+// }
+p {
+  display: block;
+  @include mixins.mobile-body-medium;
+  @include mixins.tablet {
+    @include mixins.tablet-desktop-body-medium;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+label {
+  @include mixins.mobile-labels-links-buttons;
+}
+input[type="text"],
+input[type="button"],
+input[type="submit"] {
+  height: 2.25rem;
+  padding: 0 1rem;
+  border: 1px solid colors.$secondaryLightColor;
+  border-radius: 1.25rem;
+  @include mixins.tablet {
+    height: 2.375rem;
+  }
+}
+textarea[type="textarea"] {
+  padding: 0.5rem 1rem;
+  font-family: "Titillium Web", sans-serif;
+  resize: none;
+  border: 1px solid colors.$secondaryLightColor;
+  border-radius: 1.25rem;
+  &:focus {
+    outline: none;
+    border: 1px solid colors.$primaryButtonColor;
+  }
+  @include mixins.tablet {
+  }
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border: 1px solid colors.$primaryButtonColor;
+}
+select,
+option {
+  height: 2.25rem;
+  padding: 0 2rem 0 1rem;
+  appearance: none;
+  background: url(../assets/icons/arrow_drop_down-24px.svg) 97% center no-repeat;
+  border: 1px solid colors.$secondaryLightColor;
+  border-radius: 1.25rem;
+  &:focus {
+    outline: none;
+    border: 1px solid colors.$primaryButtonColor;
+  }
+  @include mixins.tablet {
+    height: 2.375rem;
+  }
+}

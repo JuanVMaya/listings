@@ -1,0 +1,177 @@
+@use "variables";
+@use "colors";
+
+@mixin mobile {
+  @media screen and (min-width: variables.$mobile-screen) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (min-width: variables.$tablet-screen) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media screen and (min-width: variables.$desktop-screen) {
+    @content;
+  }
+}
+
+@mixin navigation-mobile {
+  text-decoration: none;
+  color: colors.$secondaryLightColor;
+  padding: 0 2.75rem;
+  width: 50%;
+
+  &:hover {
+    text-decoration: underline;
+    color: colors.$primaryLightColor;
+  }
+}
+
+@mixin navigation-tablet {
+  font-size: 0.875rem;
+  padding: 0;
+}
+
+@mixin search {
+  border: 1px solid colors.$secondaryLightColor;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  outline: none;
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.5rem;
+  text-indent: 1rem;
+  height: 2.25rem;
+
+  &::placeholder {
+    color: colors.$secondaryDarkColor;
+    font-family: "Titillium Web";
+    font-size: 0.8125rem;
+  }
+
+  &:focus {
+    border: 1px solid colors.$primaryButtonColor;
+  }
+}
+
+@mixin add-button {
+  font-family: "Titillium Web";
+  border: none;
+  border-radius: 20px;
+  background-repeat: no-repeat;
+  background-position: 5% center;
+  background-size: 1.35rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  height: 2.25rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    background-color: colors.$primaryDarkColor;
+  }
+  @include tablet {
+    width: auto;
+  }
+}
+
+//Text Styling
+@mixin mobile-page-header {
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+  font-weight: 600;
+}
+@mixin mobile-subheader {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+}
+@mixin mobile-labels-links-buttons {
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+}
+@mixin mobile-table-header {
+  font-size: 0.6875rem;
+  line-height: 1rem;
+  font-weight: 600;
+}
+@mixin mobile-body-large {
+  font-size: 0.9375rem;
+  line-height: 1.625rem;
+  font-weight: 400;
+}
+@mixin mobile-body-medium {
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+}
+@mixin mobile-body-small {
+  font-size: 0.6875rem;
+  line-height: 1rem;
+  font-weight: 400;
+}
+//Tablet and Desktop font sizing
+@mixin tablet-desktop-page-header {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 600;
+}
+@mixin tablet-desktop-subheader {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+@mixin tablet-desktop-labels-links-buttons {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+}
+@mixin tablet-desktop-table-header {
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 600;
+}
+@mixin tablet-desktop-body-large {
+  font-size: 1rem;
+  line-height: 1.75rem;
+  font-weight: 400;
+}
+@mixin tablet-desktop-body-medium {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 400;
+}
+@mixin tablet-desktop-body-small {
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+//Button
+//Add, submit
+@mixin primary-button {
+  color: colors.$primaryLightColor;
+  background-color: colors.$primaryButtonColor;
+  &:hover {
+    background-color: colors.$backgroundDarkColor;
+  }
+}
+//Cancel
+@mixin secondary-button {
+  background-color: colors.$primaryLightColor;
+  &:hover {
+    color: colors.$primaryButtonColor;
+    border-color: colors.$primaryButtonColor;
+  }
+}
+//Delete
+@mixin delete-button {
+  background-color: colors.$errorColor;
+  color: colors.$primaryLightColor;
+  &:hover {
+    background-color: colors.$backgroundDarkColor;
+  }
+}

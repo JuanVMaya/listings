@@ -1,0 +1,9 @@
+@use "../styles/colors";
+
+.header {
+  padding: 1rem 3rem 3rem 3rem;
+  background-color: colors.$primary-dark;
+  color: colors.$primary-light;
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,35 +1,12 @@
-//Variables
-$primary-dark: #1b1b82;
-$primary-light: white;
-$primary-highlight: #0909f4;
-
-$secondary-light: #f5f5f5;
-
-//Global resets
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-}
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.header {
-  padding: 1rem 3rem 3rem 3rem;
-  background-color: $primary-dark;
-  color: $primary-light;
-  display: flex;
-  justify-content: space-between;
-}
+@use "./styles/global" as *;
+@use "./styles/colors";
 
 .footer {
   display: flex;
   padding: 1rem 3rem;
   justify-content: center;
   align-items: center;
-  color: $primary-dark;
+  color: colors.$primary-dark;
 }
 
 .button {
@@ -40,7 +17,7 @@ body {
   font-weight: 600;
   border-radius: 0.5rem;
   border: none;
-  background-color: $secondary-light;
-  color: $primary-dark;
+  background-color: colors.$secondary-light;
+  color: colors.$primary-dark;
   cursor: pointer;
 }
