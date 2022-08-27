@@ -1,0 +1,46 @@
+@use "../styles/colors";
+
+.edit-form {
+  display: flex;
+  padding: 1rem 2rem;
+  flex-direction: column;
+}
+
+.input-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  &__label {
+    display: flex;
+    width: 47%;
+    flex-direction: column;
+    gap: 0.25rem;
+    color: colors.$primary-dark;
+    font-weight: 600;
+    &--radio {
+      font-weight: 400;
+      width: fit-content;
+      display: flex;
+      gap: 1rem;
+      color: black;
+      padding: 0.25rem;
+      border:solid 1px colors.$secondary-dark;
+        border-radius: 0.25rem;
+    }
+  }
+
+  &__input {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: solid 1px colors.$secondary-dark;
+    &:focus {
+      border: solid 1px colors.$primary-dark;
+    }
+  }
+}
+
+.edit-actions {
+  display: flex;
+  margin: 1rem 0;
+  gap: 1rem;
+}
