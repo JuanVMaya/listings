@@ -48,7 +48,8 @@ const ListingEdit = () => {
     const submittedData = {
       address: address,
       available: available,
-      price: price,
+      //There should be validation making sure this is a valid number in the handlePriceChange function
+      price: Number(price),
       postalCode: postalCode,
     };
     const res = await axios.put(API_URL + id, submittedData);
