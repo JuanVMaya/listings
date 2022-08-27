@@ -11,6 +11,12 @@ td,
 th {
   border: solid 1px lightgrey;
   padding: 0.5rem;
+  
+}
+tr{
+  &:hover{
+    background-color: colors.$secondary-light;
+  }
 }
 
 .actions {
