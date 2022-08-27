@@ -11,7 +11,7 @@ const ListingRow = ({ listing, deleteListing }) => {
       <td>$ {listing.price.toLocaleString()}</td>
       <td>{listing.available ? "Yes" : "No"}</td>
       <td className="actions">
-        <Link to={`/listings/${listing.id}`} className="button button-action">
+        <Link to={`/listings/${listing.id}/edit`} className="button button-action">
           Edit
         </Link>
         <button className="button button-action" onClick={handleDeleteListing}>

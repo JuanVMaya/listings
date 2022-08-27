@@ -12,7 +12,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={ListingsPage} />
           <Route path="/listings" exact component={ListingsPage} />
-          <Route path="/listings/:id" component={ListingEdit} />
+          <Route path="/listings/:id/edit" component={ListingEdit} />
         </Switch>
       </div>
       <footer className="footer">
