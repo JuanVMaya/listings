@@ -1,5 +1,6 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import PageHeader from "./components/PageHeader";
+import ListingsPage from "./pages/ListingsPage";
 import "./App.scss";
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
       <PageHeader/>
       <div className="main-container">
         <Switch>
-          {/* <Route path="/" exact component={ListingsPage} /> */}
+          <Route path="/" exact component={ListingsPage} />
         </Switch>
       </div>
       <footer className="footer">

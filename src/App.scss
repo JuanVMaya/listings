@@ -1,17 +1,19 @@
 @use "./styles/global" as *;
 @use "./styles/colors";
 
+.main-container {
+  padding: 1rem;
+  margin: -1.75rem 3rem 2rem 3rem;
+  border-radius: 0.5rem;
+  background-color: colors.$primary-light;
+}
+
 .footer {
   display: flex;
   padding: 1rem 3rem;
   justify-content: center;
   align-items: center;
   color: colors.$primary-dark;
-}
-
-.main-container {
-  padding: 1rem;
-  margin-top: -3.75rem;
 }
 
 .button {
