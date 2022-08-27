@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "./ListingRow.scss";
 
 const ListingRow = ({ listing, deleteListing }) => {
   const handleDeleteListing = () => {
@@ -7,7 +8,7 @@ const ListingRow = ({ listing, deleteListing }) => {
   
   return (
     <tr>
-      <td>{listing.address}</td>
+      <td><Link to={`/listings/${listing.id}`} className="listing-link">{listing.address}</Link></td>
       <td>$ {listing.price.toLocaleString()}</td>
       <td>{listing.available ? "Yes" : "No"}</td>
       <td className="actions">

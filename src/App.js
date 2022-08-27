@@ -2,6 +2,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import PageHeader from "./components/PageHeader";
 import ListingsPage from "./pages/ListingsPage";
 import ListingEdit from "./pages/ListingEdit";
+import Listing from "./pages/Listing";
 import "./App.scss";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={ListingsPage} />
           <Route path="/listings" exact component={ListingsPage} />
+          <Route path="/listings/:id" exact component={Listing} />
           <Route path="/listings/:id/edit" component={ListingEdit} />
         </Switch>
       </div>
