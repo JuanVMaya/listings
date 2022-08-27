@@ -1,10 +1,28 @@
+@use "../styles/colors";
+
 table {
   width: 100%;
   border-radius: 0.5rem;
   border-collapse: collapse;
 }
 
-td,th {
+td,
+th {
   border: solid 1px lightgrey;
-  padding: 0.25rem;
+  padding: 0.5rem;
+}
+
+.actions {
+  display: flex;
+}
+
+.button-action {
+  display: inline-block;
+  margin-left: 1rem;
+  color: colors.$primary-dark;
+  &:hover {
+    text-decoration: underline;
+    $primary-highlight: #0909f4;
+    color: colors.$primary-highlight;
+  }
 }
