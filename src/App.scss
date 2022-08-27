@@ -32,3 +32,11 @@
     color: colors.$primary-highlight;
   }
 }
+
+button[disabled] {
+  cursor: not-allowed;
+  color: colors.$secondary-dark;
+  &:hover {
+    color: colors.$secondary-dark;
+  }
+}
