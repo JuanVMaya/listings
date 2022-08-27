@@ -1,16 +1,18 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import PageHeader from "./components/PageHeader";
 import ListingsPage from "./pages/ListingsPage";
+import ListingEdit from "./pages/ListingEdit";
 import "./App.scss";
 
 function App() {
   return (
     <BrowserRouter>
-      <PageHeader/>
+      <PageHeader />
       <div className="main-container">
         <Switch>
           <Route path="/" exact component={ListingsPage} />
           <Route path="/listings" exact component={ListingsPage} />
+          <Route path="/listings/:id" component={ListingEdit} />
         </Switch>
       </div>
       <footer className="footer">

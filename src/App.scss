@@ -7,7 +7,6 @@
   border-radius: 0.5rem;
   background-color: colors.$primary-light;
   box-shadow: 0px 3px 10px -3px rgba(0, 0, 0, 0.5);
-
 }
 
 .footer {
@@ -29,4 +28,7 @@
   background-color: colors.$secondary-light;
   color: colors.$primary-dark;
   cursor: pointer;
+  &:hover {
+    color: colors.$primary-highlight;
+  }
 }

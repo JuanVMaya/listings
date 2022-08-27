@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
+import ListingRow from "../components/ListingRow";
 import axios from "axios";
 import "./ListingsPage.scss";
-import ListingRow from "./ListingRow";
 
 const API_URL = "http://localhost:8080/listings/";
 
@@ -14,6 +14,10 @@ const ListingsPage = () => {
     setListingsData(data);
   };
 
+  useEffect(() => {
+    getListings();
+  }, []);
+
   const handleDeleteListing = async (id) => {
     try {
       await axios.delete(API_URL + id);
@@ -23,12 +27,9 @@ const ListingsPage = () => {
     }
   };
 
-  useEffect(() => {
-    getListings();
-  }, []);
-
   return (
     <article>
+      <h1>All Listings</h1>
       <table>
         <thead>
           <tr>
@@ -50,7 +51,6 @@ const ListingsPage = () => {
           })}
         </tbody>
       </table>
-      <div></div>
     </article>
   );
 };
