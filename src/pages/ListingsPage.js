@@ -7,16 +7,17 @@ const API_URL = "http://localhost:8080/listings/";
 
 const ListingsPage = () => {
   const [listingsData, setListingsData] = useState([]);
+  const [sortParameter, setSortParameter] = useState("0-z");
 
-  const getListings = async () => {
-    const res = await axios.get(API_URL);
+  const getListings = async (sortQuery) => {
+    const res = await axios.get(`${API_URL}?sort=${sortQuery}`);
     const { data } = res;
     setListingsData(data);
   };
 
   useEffect(() => {
-    getListings();
-  }, []);
+    getListings(sortParameter);
+  }, [sortParameter]);
 
   const handleDeleteListing = async (id) => {
     try {
@@ -27,9 +28,19 @@ const ListingsPage = () => {
     }
   };
 
+  const handleSortParameterChange = (event) => {
+    setSortParameter(event.target.value);
+  };
+
   return (
     <article>
       <h1>All Listings</h1>
+      <select onChange={handleSortParameterChange} value={sortParameter}>
+        <option value="price_max_to_min">Price: High to Low</option>
+        <option value="price_min_to_max">Price: Low to High</option>
+        <option value="0-z">Alphanumeric: 0-Z</option>
+        <option value="z-9">Alphanumeric: Z-0</option>
+      </select>
       <table>
         <thead>
           <tr>

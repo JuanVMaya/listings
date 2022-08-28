@@ -19,6 +19,14 @@ tr{
   }
 }
 
+select{
+  padding:0.25rem;
+  margin-top: 1rem;
+  border-radius: 0.25rem;
+  border-color: colors.$secondary-dark;
+}
+
+
 .actions {
   display: flex;
 }
